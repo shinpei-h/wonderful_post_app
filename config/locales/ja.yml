@@ -1,0 +1,15 @@
+# ↓「日本語」ということを宣言
+ja:
+  # ↓activerecord関連(つまりDBに関連)する項目ということを宣言
+  activerecord:
+    # ↓model名(つまりテーブル名)を宣言
+    models:
+      article: 記事
+      title: タイトル
+      content: 本文
+
+    # ↓modelのattribute名(つまりテーブル名のカラム名)を宣言
+    attributes:
+      article:
+        title: タイトル
+        content: 本文

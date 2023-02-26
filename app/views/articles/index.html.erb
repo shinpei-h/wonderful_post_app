@@ -1,11 +1,11 @@
-<h1>Articles</h1>
+<p id="notice"><%= notice %></p>
 
-<table>
+<h1>記事</h1>
+<table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th></th>
+      <th scope="col">タイトル</th>
+      <th scope="col">内容</th>
     </tr>
   </thead>
   <tbody>
@@ -13,12 +13,10 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= article.content %></td>
-        <td><%= link_to 'Show', article %></td>
+        <td>
+          <%= link_to '詳細', article, class: "btn btn-success" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Article', new_article_path %>
