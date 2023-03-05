@@ -6,6 +6,7 @@ ruby '2.7.2'
 gem 'rails-i18n', '~> 6.0'
 gem 'devise'
 gem 'devise-i18n'
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.7'
