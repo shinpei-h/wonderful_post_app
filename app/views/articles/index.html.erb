@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>記事</h1>
+  <%= paginate @articles %>
  <%= render partial: "search" %>
 <table class="table">
   <thead>
@@ -12,7 +13,12 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>
+        <td>
+            <%= article.title %>
+            <% article.tags.each do |tag| %>
+              <span class="badge rounded-pill bg-primary"><%= tag.name%></span>
+            <% end %>
+         </td>
         <td><%= article.content %></td>
         <td>
           <%= link_to '詳細', article, class: "btn btn-success" %>
@@ -21,5 +27,3 @@
     <% end %>
   </tbody>
 </table>
-
- <%= paginate @articles %>
