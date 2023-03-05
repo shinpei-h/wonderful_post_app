@@ -3,9 +3,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ edit update destroy ]
 
   def index
-    articles = Article.all
-    articles = articles.where("title LIKE ?", "%#{params[:title]}%") if params[:title].present?
-    @articles = articles.page params[:page]
+    @articles = Article.all
   end
 
   def show
@@ -19,7 +17,7 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.new(article_params)
     if @article.save
-      redirect_to @article, notice: "#{t('activerecord.models.article')}を作成しました!!"
+      redirect_to @article, notice: "#{t('activerecord.models.article')}を作成しました。"
     else
       render :new
     end
@@ -38,7 +36,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    redirect_to articles_path, notice: "#{t('activerecord.models.article')}を削除しました。"
+    redirect_to articles_url, notice: "#{t('activerecord.models.article')}を削除しました。"
   end
 
  private
